@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 11, 2017 at 09:10 PM
+-- Generation Time: Sep 12, 2017 at 07:12 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.5.38
 
@@ -51,7 +51,8 @@ INSERT INTO `customer` (`c_id`, `c_name`, `c_email`, `c_address`, `c_zip`, `c_te
 (5, 'Ronald Ford', 'ronal.ford@gmail.com', '32, RDF, US', '2003', '4325617809', '1985-05-17', 0, 0, '2017-09-11 00:00:00'),
 (6, 'Veronica Jackson', 'veronica.jackson@gmail.com', 'S/201, Tower 2, Lane 1, Phillipines', '1003', '432567323', '1989-06-21', 1, 0, '2017-09-11 00:00:00'),
 (13, 'Matthew Joys', 'mathew.joys@gmail.com', 'Testing Testing Testing', '345534', '35345345354', '1988-02-16', 1, 0, '2017-09-11 20:52:22'),
-(14, 'Thomas Rismus', 'thomas@gmail.com', 'testin testing testing testing', '234202', '242423424', '1980-03-17', 1, 0, '2017-09-11 20:55:36');
+(14, 'Thomas Rismus', 'thomas@gmail.com', 'testin testing testing testing', '234202', '242423424', '1980-03-17', 1, 0, '2017-09-11 20:55:36'),
+(15, 'Sandy Biswal', 'sandy.biswal@gmail.com', 'Testing Testing Testing', '2342345', '24243544645', '1995-09-07', 1, 0, '2017-09-12 07:09:18');
 
 --
 -- Indexes for dumped tables
@@ -71,7 +72,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
