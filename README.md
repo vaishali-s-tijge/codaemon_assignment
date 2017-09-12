@@ -1,4 +1,4 @@
-# codaemon_assignment
+# Customer Management
 
 This source code uses codeigniter framework and contains "Customer Management" module.
 
