@@ -70,11 +70,18 @@ class Customers extends CI_Model {
 		if(strlen($this->input->get('name')) > 0){
 			$cname = $this->input->get('name');
 			$where[] = " and (c.c_name like '%".$cname."%')";
-			
+		}
+		if(strlen($this->input->get('txt_name')) > 0){
+			$cname = $this->input->get('txt_name');
+			$where[] = " and (c.c_name like '%".$cname."%')";
 		}
 		if(strlen($this->input->get('email')) > 0){
 			$where[] = " and c.c_email like ?";
 			$param[] = '%'.$this->input->get('email').'%';
+		}
+		if(strlen($this->input->get('txt_email')) > 0){
+			$where[] = " and c.c_email like ?";
+			$param[] = '%'.$this->input->get('txt_email').'%';
 		}
 		if(strlen($this->input->get('address')) > 0){
 			$where[] = " and c.c_address like ?";
@@ -91,6 +98,21 @@ class Customers extends CI_Model {
 		if(strlen($this->input->get('dob')) > 0){
 			$where[] = " and c.c_dob like ?";
 			$param[] = '%'.$this->input->get('dob').'%';
+		}
+		if(strlen($this->input->get('age')) > 0){
+			$age = $this->input->get('age');
+			$timestamp = strtotime('-25 years');
+			$date = date('Y-m-d', $timestamp);
+			if($age=="<25")
+			{
+				$where[] = " and c.c_dob > ?";
+				$param[] = $date;
+			}elseif($age==">=25")
+			{
+				$where[] = " and c.c_dob <= ?";
+				$param[] =  $date;
+			}
+			
 		}
 		if(strlen($this->input->get('is_active')) > 0){
 			$where[] = " and c.c_is_active like ?";
@@ -109,7 +131,6 @@ class Customers extends CI_Model {
 		$sql = "SELECT SQL_CALC_FOUND_ROWS *, c.c_id, c.c_name, c.c_email, c.c_address, c.c_zip, c.c_telephone, c.c_dob, c.c_is_active, c.c_added_date FROM customer as c where c.c_is_deleted=0 ".$where_condition." order by ".$order_by." limit ".$page.", ".$ROW_PER_PAGE." ";
 		
 		$query = $this->db->query($sql, $param);
-	
 		$sql_tr = "SELECT FOUND_ROWS() as total_rows";
 		$query_tr = $this->db->query($sql_tr);
 		$row_tr = $query_tr->result(); 
