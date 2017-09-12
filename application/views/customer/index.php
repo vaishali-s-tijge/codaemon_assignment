@@ -3,8 +3,7 @@
 <h1>Customers</h1>
 
 	<div id="body">
-		  <div id="ajaxcustomerlist">
-      </div>
+		<div id="ajaxcustomerlist"></div>
 	</div>
 
 <?php $this->load->view('template/footer_start'); ?>

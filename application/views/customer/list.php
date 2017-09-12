@@ -17,6 +17,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="box box-info">
           <div class="box-header">
             <div class="row">
+              <div class="col-sm-12 col-xs-12 col-md-12" style="margin-bottom:10px;">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-4">
+                <input class="form-control" name="txt_name" id="txt_name" placeholder="Name" value="<?php echo stripslashes($this->input->get('txt_name')); ?>"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-4">
+                <input class="form-control" name="txt_email" id="txt_email" placeholder="Email" value="<?php echo stripslashes($this->input->get('txt_email')); ?>" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Age</label>
+                <div class="col-sm-4">
+               
+                <select class="form-control" name="age" id="age">
+                  <option value="">--Select Age--</option>
+                  <option value="<25" <?php if($this->input->get('age')=='<25') { echo "selected"; }?>>Less than 25 years</option>
+                  <option value=">=25" <?php if($this->input->get('age')=='>=25') { echo "selected"; }?>>Greater than or equal to 25 years</option>
+                </select>
+                </div>
+              </div>
+            </div>
               <div class="col-sm-6">
                		<div class="col-sm-3 col-xs-9" style="padding-left:0px;padding-right:0px;">
                     <select name="action" id="action"  class="form-control">
